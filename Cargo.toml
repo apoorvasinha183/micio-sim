@@ -4,3 +4,16 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+ndarray = "0.15"  # For numerical computations
+nalgebra = "0.32" # Linear algebra (vectors, matrices, tensors)
+rayon = "1.8"     # Parallel computing
+serde = { version = "1.0", features = ["derive"] } # Serialization
+serde_json = "1.0" # JSON I/O
+thiserror = "1.0"  # Error handling
+log = "0.4"        # Logging
+env_logger = "0.10" # Logging backend
+#hdf5 = "0.8"       # HDF5 file format support (optional)
+rand = "0.8"       # Random number generation for simulations
+clap = { version = "4.0", features = ["derive"] } # CLI support
+plotters = "0.3.7"
+indicatif = "0.17.11"
