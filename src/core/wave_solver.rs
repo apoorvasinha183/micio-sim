@@ -1,4 +1,4 @@
-use ndarray::{Array1, Array2};
+use ndarray::{Array1};
 
 /// Solves the 1D wave equation using the finite difference method.
 ///
@@ -28,11 +28,11 @@ pub fn solve_wave_1d(
             u_next[i] = 2.0 * u_curr[i] - u_prev[i] + c2 * (u_curr[i - 1] - 2.0 * u_curr[i] + u_curr[i + 1]);
         }
         // **Apply Absorbing Boundary Conditions (Prevents Reflection for test)**
-        u_next[0] = u_next[1];          // Left boundary absorbs
-        u_next[nx - 1] = u_next[nx - 2]; // Right boundary absorbs
+        //u_next[0] = u_next[1];          // Left boundary reflects
+        //u_next[nx - 1] = u_next[nx - 2]; // Right boundary reflects
         // Reflecting
-        //u_next[0] = 0.0;        // Left boundary fixed at 0
-        //u_next[nx - 1] = 0.0;   // Right boundary fixed at 0
+        u_next[0] = 0.0;        // Left boundary fixed at 0
+        u_next[nx - 1] = 0.0;   // Right boundary fixed at 0
         // Shift time steps
         u_prev = u_curr.clone();
         u_curr = u_next.clone();

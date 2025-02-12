@@ -17,3 +17,4 @@ rand = "0.8"       # Random number generation for simulations
 clap = { version = "4.0", features = ["derive"] } # CLI support
 plotters = "0.3.7"
 indicatif = "0.17.11"
+plotters-bitmap = "0.3.7"
